@@ -6,3 +6,9 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 end
+
+  get 'messages/index'
+  root to: "messages#index"
+  resources :users, only: [:edit, :update]
+end
+
