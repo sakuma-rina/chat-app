@@ -10,7 +10,6 @@ class User < ApplicationRecord
   has_many :rooms, through: :room_users
   has_many :messages
 
-end
 
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

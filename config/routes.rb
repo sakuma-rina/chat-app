@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  get 'messages/index'
   root to: "rooms#index"
   resources :users, only: [:edit, :update]
   resources :rooms, only: [:new, :create, :destroy] do
@@ -7,8 +8,10 @@ Rails.application.routes.draw do
   end
 end
 
-  get 'messages/index'
-  root to: "messages#index"
-  resources :users, only: [:edit, :update]
-end
+# アクションプラン
+# ①デバイスを導入し直す
+# ②% rails db:drop
+# ③% rails db:create
+# ④% rails db:migrate
+# ⑤サーバー再起動
 
